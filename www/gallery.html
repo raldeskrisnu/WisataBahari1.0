@@ -1,0 +1,55 @@
+<html ng-app="MainModule">
+<head>
+
+<!-- ionic/angularjs js -->
+<script src="css/ionic/js/ionic.bundle.js"></script>
+
+<link href="css/ionic/css/ionic.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+
+<!-- load cordova for camera -->
+<script src="js/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+
+<!-- cordova script (this will be a 404 during development) -->
+<script language="JavaScript" src="js/View.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-controller="MainController">
+<ion-view view-title="wisata" align-title="left">
+<ion-header>
+<!-- start header -->
+    <div class ="bar bar-header bar-positive">
+	<a class ="ion ion-arrow-left-a" href="index.html" style="color:white" nav-transition="none"> Kembali </a>
+		<div class="col text-center">
+			<h3 style="color:white;"class "title"> wisata </h3>
+	 </div>
+	</div>
+	<!-- end header -->
+</ion-header>
+<ion-pane>
+<ion-content ng-init="loadImage()">
+	<!-- start content -->
+	<div class="row responsive-md">
+		<div class="mypadding">
+		<div class="col col-25" ng-repeat="image in images">
+		
+            <img ng-src="{{image.src}}" width="100%" /> 
+			
+        </div>
+		</div>
+	</div>
+</ion-content>
+<ion-footer>
+<div class="bar bar-footer bar-positive">
+	<div class="col text-center">
+	Copyright Raldes krisnu pratama
+	</div>
+	</div>
+
+</ion-footer>
+</ion-view>
+</ion-pane>
+
+</body>
+</html>

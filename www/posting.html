@@ -1,0 +1,87 @@
+<html>
+<head>
+<link href="css/ionic/css/ionic.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<!-- ionic/angularjs js -->
+<script src="css/ionic/js/ionic.bundle.js"></script>
+
+<!-- load cordova for camera -->
+<script src="js/ngCordova/dist/ng-cordova.js"></script>
+<script src="cordova.js"></script>
+
+<!-- cordova script (this will be a 404 during development) -->
+<script language="JavaScript" src="js/View.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body ng-app="MainModule">
+<ion-view view-title="posting" align-title="left"  ng-controller="MainController">
+<ion-header>
+<!-- start header -->
+    <div class ="bar bar-header bar-positive">
+    <a class ="ion ion-arrow-left-a" href="index.html" style="color:white" nav-transition="none"> Kembali </a>
+		<div class="col text-center">
+			<h3 style="color:white;"class "title"> Posting </h3>
+	 </div>
+	</div>
+	<!-- end header -->
+</ion-header>
+
+<ion-content>
+	<!-- start content -->
+	<div class="list mypadding">
+		<label class="item item-input item-stacked-label">
+			<i class="icon ion-person placeholder-icon"></i>
+			<span class="input-label">Nama Anda</span>
+			<input type="text" ng-model="formData.username" placeholder="Nama">
+		</label>
+	
+		<label class="item item-input item-stacked-label">
+			<i class="icon ion-leaf placeholder-icon"></i>
+			<span class="input-label">Nama Tempat Wisata</span>
+			<input type="text" ng-model="formData.place" placeholder="Lokasi">
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<i class="icon ion-pricetag placeholder-icon"></i>
+			<span class="input-label">Harga Tiket</span>
+			<input type="text" ng-model="formData.harga" placeholder="Harga">
+		</label>
+		
+		<label class="item item-input item-stacked-label">
+			<i class="icon ion-navigate placeholder-icon"></i>
+			<span class="input-label">Lokasi</span>
+			<input type="text" ng-model="formData.location" placeholder="Lokasi">
+		</label>
+	
+		<label class="item item-input item-stacked-label">
+			<i class="icon ion-document-text placeholder-icon"></i>
+			<span class="input-label">Deskripsi</span>
+			<input type="text" ng-model="formData.desc" placeholder="Deskripsi">
+		</label>
+		
+		<label class="item item-input item-stacked-label ">
+			<i class="icon ion-image placeholder-icon"></i>
+			<span class="input-label">photo</span>
+			<input type="text" ng-model="formData.photo" readonly>
+		</label>
+		<br>
+		<button class="button button-positive" ng-click="takePicture()">Take photo</button>
+		<button class="button button-positive" ng-click="check_credentials()">Submit</button>
+		<br>
+		<br>
+		<img ng-repeat="image in images" ng-src="{{urlForImage(image)}}" width="200px" height="200px"/>
+	</div>
+	
+</ion-content>
+
+<ion-footer>
+<div class="bar bar-footer bar-positive">
+	<div class="col text-center">
+	Copyright Raldes krisnu pratama
+	</div>
+	</div>
+
+</ion-footer>
+</ion-view>
+</body>
+</html>
